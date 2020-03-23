@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Quedate en casa</string>
-    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
     <string name="facebook_app_id">1062726510762982</string>
     <string name="fb_login_protocol_scheme">fb1062726510762982</string>
+    <string name="google_client_id">551888092753-arm3r0140gf597a0j9km6cpat9cpn6qh.apps.googleusercontent.com</string>
+    <string name="google_client_secret">4hfSOVQrzC_RE5XFqXUFrOW8</string>
 </resources>

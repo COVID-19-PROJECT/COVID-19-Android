@@ -3,34 +3,89 @@ package com.gt.quedateencasa.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.gt.quedateencasa.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
     companion object {
+        const val RC_SIGN_IN = 1
         val FB_PERMISSIONS = arrayListOf("public_profile", "email", "user_birthday")
     }
 
-    val callbackManager by lazy {
+    private val callbackManager by lazy {
         CallbackManager.Factory.create()
     }
+
+    private val gso by lazy {
+        GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build()
+    }
+
+    private val mGoogleSignInClient by lazy {
+        GoogleSignIn.getClient(this, gso)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        setupGoogleButton()
         setupFBButton()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
+        if (RC_SIGN_IN == requestCode) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignInResult(task)
+        }
     }
+
+    //region google
+    private fun setupGoogleButton() {
+        sign_in_google_button.setSize(SignInButton.SIZE_STANDARD)
+        sign_in_google_button.setOnClickListener {
+            val signInIntent = mGoogleSignInClient.signInIntent
+            startActivityForResult(signInIntent, RC_SIGN_IN)
+        }
+    }
+
+    private fun handleSignInResult(task: Task<GoogleSignInAccount>) {
+        try {
+            val account = task.getResult(ApiException::class.java)
+            account?.let {
+                onSuccessLoginGoogle(it)
+            }
+        } catch (e: ApiException) {
+            onErrorLoginGoogle(e)
+        }
+    }
+
+    private fun onSuccessLoginGoogle(account: GoogleSignInAccount) {
+        Toast.makeText(this, "Bienvenido: " + account.email, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun onErrorLoginGoogle(e: ApiException) {
+        e.printStackTrace()
+    }
+
+    private fun isLoggedInGoogle(): Boolean{
+        return null != GoogleSignIn.getLastSignedInAccount(this)
+    }
+    //endregion
 
     //region facebook
     private fun setupFBButton() {
@@ -50,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun onSuccessLoginFB(reuslt: LoginResult?) {
+    private fun onSuccessLoginFB(result: LoginResult?) {
 
     }
 
