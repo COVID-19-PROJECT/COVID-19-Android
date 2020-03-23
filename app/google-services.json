@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "423214658048",
-    "firebase_url": "https://quedate-en-casa-d3492.firebaseio.com",
-    "project_id": "quedate-en-casa-d3492",
-    "storage_bucket": "quedate-en-casa-d3492.appspot.com"
+    "project_number": "551888092753",
+    "firebase_url": "https://quedate-en-casa-a3a1a.firebaseio.com",
+    "project_id": "quedate-en-casa-a3a1a",
+    "storage_bucket": "quedate-en-casa-a3a1a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:423214658048:android:0241443f86d54e04db9ee5",
+        "mobilesdk_app_id": "1:551888092753:android:0c651cc2b74cc3352e0270",
         "android_client_info": {
           "package_name": "com.gt.quedateencasa"
         }
       },
       "oauth_client": [
         {
-          "client_id": "423214658048-o04fh9lm62ii3cpn7r6hjiaar44d9glq.apps.googleusercontent.com",
+          "client_id": "551888092753-c9p1337bghqcmfo01a7lv5q3un2r27lo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyArRVegzc1VJ5ZVIB0XMlVINCrWHn9-qro"
+          "current_key": "AIzaSyBKPgiDzRhwiahFYxuQK8kQpVsC50issA4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "423214658048-o04fh9lm62ii3cpn7r6hjiaar44d9glq.apps.googleusercontent.com",
+              "client_id": "551888092753-c9p1337bghqcmfo01a7lv5q3un2r27lo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

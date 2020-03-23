@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Quedate en casa</string>
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_app_id">146004590097731</string>
+    <string name="fb_login_protocol_scheme">fb146004590097731</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
 </resources>
