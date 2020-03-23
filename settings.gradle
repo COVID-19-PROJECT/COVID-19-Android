@@ -1,0 +1,2 @@
+rootProject.name='Quedate en casa'
+include ':app'
