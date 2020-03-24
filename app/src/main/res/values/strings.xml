@@ -8,6 +8,8 @@
     <string name="message_doble_press_back">Presione 2 veces para salir de la aplicación</string>
     <string name="home_text_content">Siempre hemos logrado salir adelante en cualquier situación. Ahora lo lograremos, <b>quedándonos en casa</b>. Ayúdanos a recolectar datos para evitar el contagio de Coronavirus en Guatemala.</string>
     <string name="register_title">Regístrate con</string>
-    <string name="conditions_and_terms">Acepto los términos y condiciones</string>
+    <string name="conditions_and_terms">términos y condiciones</string>
+    <string name="accept_terms">Acepto los</string>
     <string name="create_and_support">Crea tu cuenta y apoya</string>
 </resources>
+

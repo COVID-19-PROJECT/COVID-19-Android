@@ -8,4 +8,6 @@
   <color name="colorWhite">#ffffff</color>
 
   <color name="colorLightBlue">#3366ff</color>
+  <color name="colorShadow">#757575</color>
+  <color name="textColor">#3A3F50</color>
 </resources>

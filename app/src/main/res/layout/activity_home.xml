@@ -84,6 +84,7 @@
             android:gravity="center"
             android:autoSizeTextType="uniform"
             android:text="@string/home_text_content"
+            android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></TextView>
@@ -103,6 +104,7 @@
                 android:text="@string/register_title"
                 android:textAllCaps="true"
                 android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/textColor"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -110,72 +112,136 @@
                 ></TextView>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/sign_in_buttons"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="@dimen/xl_margin"
+                android:layout_marginTop="@dimen/xxl_margin"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/register_title"
-                app:layout_constraintBottom_toTopOf="@id/check_conditions_and_terms">
+                app:layout_constraintBottom_toTopOf="@id/layout_conditions_and_terms">
 
-                <com.google.android.gms.common.SignInButton
-                    android:id="@+id/sign_in_google_button"
-                    android:layout_width="wrap_content"
+                <FrameLayout
+                    android:id="@+id/login_fb_button_layout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/login_fb_button"/>
-                <FrameLayout
-                    android:layout_below="@+id/no_network_bar"
-                    android:id="@+id/FrameLayout1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    app:layout_constraintStart_toStartOf="parent">
 
                     <com.facebook.login.widget.LoginButton
-                        android:id="@+id/login_button"
+                        android:id="@+id/sign_in_facebook_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="gone" />
 
                     <Button
-                        android:background="#3B5998"
-                        android:layout_width="match_parent"
+                        android:background="@drawable/rounded_shape_fb"
+                        android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:id="@+id/fb"
+                        android:id="@+id/fb_button"
                         android:onClick="onClickFacebookButton"
                         android:textAllCaps="false"
-                        android:text="Sign up with Facebook"
                         android:textSize="22sp"
                         android:textColor="#ffffff" />
                 </FrameLayout>
-                <com.facebook.login.widget.LoginButton
-                    android:id="@+id/login_fb_button"
-                    android:layout_width="wrap_content"
+
+                <FrameLayout
+                    android:id="@+id/login_google_button_layout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/sign_in_google_button"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_margin="@dimen/lg_margin"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/sign_in_google_button"/>
+                    app:layout_constraintStart_toEndOf="@id/login_fb_button_layout"
+                    app:layout_constraintEnd_toStartOf="@id/login_twitter_button_layout">
+
+                    <com.google.android.gms.common.SignInButton
+                        android:id="@+id/sign_in_google_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:background="@drawable/rounded_shape_google"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/google_button"
+                        android:onClick="onClickGoogleButton"
+                        android:textAllCaps="false"
+                        android:textSize="22sp"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/login_twitter_button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/login_google_button_layout"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <com.google.android.gms.common.SignInButton
+                        android:id="@+id/sign_in_twitter_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:background="@drawable/rounded_shape_twitter"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/twitter_button"
+                        android:onClick="onClickTwitterButton"
+                        android:textAllCaps="false"
+                        android:textSize="22sp"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <CheckBox
-                android:id="@+id/check_conditions_and_terms"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_conditions_and_terms"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:layout_margin="@dimen/lg_margin"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/xxl_margin"
                 app:layout_constraintTop_toBottomOf="@id/sign_in_buttons"
                 app:layout_constraintBottom_toTopOf="@id/button_create_account"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="@string/conditions_and_terms">
-            </CheckBox>
+                app:layout_constraintEnd_toEndOf="parent">
+                <CheckBox
+                    android:id="@+id/check_conditions_and_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/accept_terms"
+                    android:textSize="@dimen/md_text_size"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/link_conditions_and_terms">
+                </CheckBox>
+
+                <TextView
+                    android:id="@+id/link_conditions_and_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sm_margin"
+                    android:autoLink="all|web"
+                    android:text="@string/conditions_and_terms"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/md_text_size"
+                    android:textStyle="bold"
+                    android:onClick="onClickTermsAndContidions"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/check_conditions_and_terms"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <Button
                 android:id="@+id/button_create_account"
                 android:layout_width="0dp"
