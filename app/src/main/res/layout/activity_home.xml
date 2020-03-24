@@ -253,6 +253,7 @@
                 android:autoSizeTextType="uniform"
                 android:autoSizeStepGranularity="3sp"
                 android:padding="@dimen/lg_margin"
+                android:onClick="onClickCreateAccount"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"></Button>

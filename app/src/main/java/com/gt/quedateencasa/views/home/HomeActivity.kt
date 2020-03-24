@@ -53,4 +53,9 @@ class HomeActivity : AppCompatActivity() {
     {
         Toast.makeText(this, "Show terms and contidions", Toast.LENGTH_SHORT).show()
     }
+
+    fun onClickCreateAccount(v:View)
+    {
+
+    }
 }
