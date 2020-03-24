@@ -127,7 +127,29 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/login_fb_button"/>
+                <FrameLayout
+                    android:layout_below="@+id/no_network_bar"
+                    android:id="@+id/FrameLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <com.facebook.login.widget.LoginButton
+                        android:id="@+id/login_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:background="#3B5998"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:id="@+id/fb"
+                        android:onClick="onClickFacebookButton"
+                        android:textAllCaps="false"
+                        android:text="Sign up with Facebook"
+                        android:textSize="22sp"
+                        android:textColor="#ffffff" />
+                </FrameLayout>
                 <com.facebook.login.widget.LoginButton
                     android:id="@+id/login_fb_button"
                     android:layout_width="wrap_content"
@@ -152,17 +174,18 @@
                 app:layout_constraintBottom_toTopOf="@id/button_create_account"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:text="Acepto los términos y condiciones">
+                android:text="@string/conditions_and_terms">
             </CheckBox>
             <Button
                 android:id="@+id/button_create_account"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:background="@color/colorLightBlue"
-                android:text="Crea tu cuenta y apoya"
+                android:text="@string/create_and_support"
                 android:textColor="@color/colorWhite"
                 android:layout_marginBottom="@dimen/xxl_margin"
                 android:autoSizeTextType="uniform"
+                android:autoSizeStepGranularity="3sp"
                 android:padding="@dimen/lg_margin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
