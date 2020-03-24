@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"  android:layout_height="60dp" android:layout_width="60dp">
+    <item>
+        <shape android:shape="rectangle" android:bottom="11px" android:top="19px" android:left="10px" android:right="10px">
+            <padding
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp"
+                android:bottom="2dp"
+                />
+            <gradient
+                android:angle="90"
+                android:endColor="@color/cardview_shadow_end_color"
+                android:startColor="@color/cardview_shadow_start_color" />
+            <corners
+                android:radius="60dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle" android:bottom="11px" android:top="19px" android:left="10px" android:right="10px">
+            <padding
+                android:left="10dp"
+                android:right="10dp"
+                android:top="10dp"
+                android:bottom="10dp"
+                />
+            <solid android:color="@color/colorWhite"></solid>
+            <corners
+                android:radius="60dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/google_icon"></item>
+</layer-list>

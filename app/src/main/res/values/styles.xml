@@ -6,6 +6,28 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:textColor">@color/textColor</item>
   </style>
 
+  <style name="AppTheme.SplashScreen" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowDisablePreview">true</item>
+    <item name="colorPrimaryDark">@color/colorPrimary</item>
+  </style>
+
+  <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowDisablePreview">true</item>
+    <item name="colorPrimaryDark">@color/colorPrimary</item>
+  </style>
+
+  <style name="FacebookLoginButton">
+    <item name="android:textSize">@dimen/sm_text_size</item>
+    <item name="android:background">@drawable/f_logo_blue_58</item>
+    <item name="android:layout_marginTop">10dp</item>
+    <item name="android:layout_marginBottom">10dp</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+  </style>
 </resources>
