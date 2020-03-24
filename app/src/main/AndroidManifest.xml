@@ -48,9 +48,6 @@
             </intent-filter>-->
         </activity>
         <activity
-            android:name=".views.login.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".views.welcome.WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
