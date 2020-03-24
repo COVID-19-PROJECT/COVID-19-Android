@@ -1,9 +1,10 @@
-package com.gt.quedateencasa.login
+package com.gt.quedateencasa.views.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -52,6 +53,21 @@ class LoginActivity : AppCompatActivity() {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
+    }
+
+    var doubleBackToExitPressedOnce = false
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.finish()
+            System.exit(0)
+        }
+        doubleBackToExitPressedOnce = true
+        Toast.makeText(
+            this,
+            resources.getText(R.string.message_doble_press_back),
+            Toast.LENGTH_SHORT
+        ).show()
+        Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
     }
 
     //region google

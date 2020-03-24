@@ -4,4 +4,8 @@
     <string name="fb_login_protocol_scheme">fb1062726510762982</string>
     <string name="google_client_id">551888092753-arm3r0140gf597a0j9km6cpat9cpn6qh.apps.googleusercontent.com</string>
     <string name="google_client_secret">4hfSOVQrzC_RE5XFqXUFrOW8</string>
+
+    <string name="message_doble_press_back">Presione 2 veces para salir de la aplicación</string>
+    <string name="home_text_content">Siempre hemos logrado salir adelante en cualquier situación. Ahora lo lograremos, <b>quedándonos en casa</b>. Ayúdanos a recolectar datos para evitar el contagio de Coronavirus en Guatemala.</string>
+    <string name="register_title">Regístrate con</string>
 </resources>
