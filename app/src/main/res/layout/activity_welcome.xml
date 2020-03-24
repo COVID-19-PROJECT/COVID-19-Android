@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".views.home.HomeActivity">
+    tools:context=".views.welcome.WelcomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/logo_container"

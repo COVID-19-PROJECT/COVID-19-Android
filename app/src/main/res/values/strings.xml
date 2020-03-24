@@ -11,5 +11,9 @@
     <string name="conditions_and_terms">términos y condiciones</string>
     <string name="accept_terms">Acepto los</string>
     <string name="create_and_support">Crea tu cuenta y apoya</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
 

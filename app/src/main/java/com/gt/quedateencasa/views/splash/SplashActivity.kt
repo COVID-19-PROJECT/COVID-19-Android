@@ -11,25 +11,21 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.databinding.ActivitySplashBinding
-import com.gt.quedateencasa.views.home.HomeActivity
-import com.gt.quedateencasa.views.login.LoginActivity
+import com.gt.quedateencasa.views.welcome.WelcomeActivity
+import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
-    var logoSplash: ImageView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        var binding : ActivitySplashBinding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
-        logoSplash = findViewById(R.id.logo_splash)
         initializeLayout()
     }
 
     private fun initializeLayout(){
         val handler = Handler()
         val r = Runnable {
-            startActivity(HomeActivity::class.java)
+            startActivity(WelcomeActivity::class.java)
         }
         handler.postDelayed(r, 1500)
     }
@@ -39,7 +35,7 @@ class SplashActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val pairs: Array<Pair<View, String>?> = arrayOfNulls(1)
             pairs[0] = Pair.create<View, String>(
-                logoSplash,
+                logo_splash,
                 "logoTransition"
             )
             val options = ActivityOptions.makeSceneTransitionAnimation(this, *pairs)

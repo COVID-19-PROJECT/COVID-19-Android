@@ -1,4 +1,4 @@
-package com.gt.quedateencasa.views.home
+package com.gt.quedateencasa.views.welcome
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,18 +7,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.gt.quedateencasa.R
+import kotlinx.android.synthetic.main.activity_welcome.*
 
-class HomeActivity : AppCompatActivity() {
+class WelcomeActivity : AppCompatActivity() {
 
-    var facebookButton: Button? = null
-    var twitterButton: Button? = null
-    var googleButton: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-        facebookButton = findViewById(R.id.sign_in_facebook_button)
-        googleButton = findViewById(R.id.sign_in_facebook_button)
-        twitterButton = findViewById(R.id.sign_in_facebook_button)
+        setContentView(R.layout.activity_welcome)
     }
 
     var doubleBackToExitPressedOnce = false
@@ -38,15 +33,15 @@ class HomeActivity : AppCompatActivity() {
 
     /*Button actions*/
     fun onClickFacebookButton(v: View){
-        facebookButton?.performClick()
+        sign_in_facebook_button?.performClick()
     }
 
     fun onClickTwitterButton(v: View){
-        twitterButton?.performClick()
+        sign_in_twitter_button?.performClick()
     }
 
     fun onClickGoogleButton(v: View){
-        googleButton?.performClick()
+        sign_in_google_button?.performClick()
     }
 
     fun onClickTermsAndContidions(v:View)
