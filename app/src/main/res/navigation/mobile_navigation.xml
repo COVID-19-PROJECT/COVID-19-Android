@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.gt.quedateencasa.views.main.ui.emergencyNumbers.EmergencyNumbersFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_emergency_numbers" />
 
     <fragment
         android:id="@+id/navigation_dashboard"

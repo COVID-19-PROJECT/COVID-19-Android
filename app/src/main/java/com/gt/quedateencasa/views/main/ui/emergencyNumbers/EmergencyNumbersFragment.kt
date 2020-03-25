@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gt.quedateencasa.R
 import com.gt.quedateencasa.repositories.models.EmergencyNumberObject
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_emergency_numbers.*
 
 
 class EmergencyNumbersFragment : Fragment() {
@@ -41,7 +41,7 @@ class EmergencyNumbersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_emergency_numbers, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
