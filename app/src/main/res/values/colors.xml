@@ -7,6 +7,7 @@
   <color name="colorBlue">#18367f</color>
   <color name="colorWhite">#ffffff</color>
   <color name="colorInactive">#b2b2b2</color>
+  <color name="colorBlack">#000000</color>
 
   <color name="colorLightBlue">#3366ff</color>
   <color name="colorShadow">#757575</color>
