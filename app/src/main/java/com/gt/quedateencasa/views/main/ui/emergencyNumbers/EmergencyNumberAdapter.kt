@@ -12,6 +12,7 @@ class EmergencyNumberAdapter :
     RecyclerView.Adapter<EmergencyNumberAdapter.ItemEmergencyNumberViewHolder>() {
 
     private val listNumber = arrayListOf<EmergencyNumberObject>()
+    var listener: NumberListener? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -41,6 +42,13 @@ class EmergencyNumberAdapter :
             v.txt_emergency_number.text = item.number
             v.txt_emergency_title.text = item.name
             v.img_logo.setImageResource(item.resource)
+            v.btn_call.setOnClickListener {
+                listener?.onNumberClickListener(item)
+            }
         }
+    }
+
+    interface NumberListener {
+        fun onNumberClickListener(item: EmergencyNumberObject)
     }
 }

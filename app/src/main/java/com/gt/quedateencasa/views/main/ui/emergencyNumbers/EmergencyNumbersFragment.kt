@@ -1,5 +1,7 @@
 package com.gt.quedateencasa.views.main.ui.emergencyNumbers
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -47,6 +49,11 @@ class EmergencyNumbersFragment : Fragment() {
             DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         )
         list_numbers.itemAnimator = DefaultItemAnimator()
+        emergencyNumberAdapter.listener = object : EmergencyNumberAdapter.NumberListener {
+            override fun onNumberClickListener(item: EmergencyNumberObject) {
+                callNumber(item.number)
+            }
+        }
     }
 
     private fun getNumbers() {
@@ -57,5 +64,11 @@ class EmergencyNumbersFragment : Fragment() {
 
     private fun setNumbersInList(list: List<EmergencyNumberObject>) {
         emergencyNumberAdapter.updateItems(list)
+    }
+
+    private fun callNumber(number: String) {
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.data = Uri.parse("tel:$number")
+        startActivity(intent)
     }
 }

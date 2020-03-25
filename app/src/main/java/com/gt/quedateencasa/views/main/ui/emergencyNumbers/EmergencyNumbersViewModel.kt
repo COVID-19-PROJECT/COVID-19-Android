@@ -5,7 +5,6 @@ import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.gt.quedateencasa.R
 import com.gt.quedateencasa.repositories.EmergencyNumbersRepository
 import com.gt.quedateencasa.repositories.models.EmergencyNumberObject
 
