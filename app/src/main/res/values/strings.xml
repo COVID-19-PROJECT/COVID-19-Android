@@ -16,5 +16,16 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_emergency_numbers">Números de emergencia</string>
+
+    <string name="title_emergency_number_gt">Emergencia Coronavirus</string>
+    <string name="emergency_number_gt">1510</string>
+    <string name="emergency_number_gt_2">1540</string>
+    <string name="title_emergency_number_cbm_gt">Bomberos Municipales</string>
+    <string name="emergency_number_cbm_gt">123</string>
+    <string name="title_emergency_number_cvb_gt">Bomberos Voluntarios</string>
+    <string name="emergency_number_cvb_gt">122</string>
+    <string name="title_emergency_number_pnc_gt">Policia Nacional Civil</string>
+    <string name="emergency_number_pnc_gt">110</string>
+
 </resources>
 
