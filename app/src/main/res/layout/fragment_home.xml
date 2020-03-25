@@ -61,79 +61,12 @@
             app:layout_constraintTop_toBottomOf="@id/card_stats"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
-
-            <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TableLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_news"
+                android:padding="@dimen/xl_margin"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/xl_margin"
-                android:stretchColumns="1">
-
-                <LinearLayout
-                    android:id="@+id/linear_usage"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/md_margin"
-                        android:textAllCaps="true"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="@dimen/xl_margin"
-                        android:text="@string/usage_form"></TextView>
-                    <ProgressBar
-                        android:id="@+id/progress_bar_usage"
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:background="@android:color/transparent"
-                        android:indeterminate="true"
-                        ></ProgressBar>
-                    <WebView android:id="@+id/webview_usage"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"></WebView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_tips"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:layout_marginTop="@dimen/xl_margin"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/md_margin"
-                        android:textAllCaps="true"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="@dimen/xl_margin"
-                        android:text="@string/text_tips"></TextView>
-                    <ProgressBar
-                        android:id="@+id/progress_bar_tips"
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:background="@android:color/transparent"
-                        android:indeterminate="true"
-                        ></ProgressBar>
-                    <WebView android:id="@+id/webview_tips"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                    </WebView>
-
-                </LinearLayout>
-
-            </TableLayout>
-        </ScrollView>
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
