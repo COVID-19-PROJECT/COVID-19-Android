@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -13,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.views.main.models.EmergencyNumberObject
+import com.gt.quedateencasa.repositories.models.EmergencyNumberObject
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -44,7 +43,7 @@ class EmergencyNumbersFragment : Fragment() {
         list_numbers.itemAnimator = DefaultItemAnimator()
     }
     private fun getNumbers() {
-        emergencyNumbersViewModel.getNumbers().observe(viewLifecycleOwner, Observer {
+        emergencyNumbersViewModel.getNumbers(context).observe(viewLifecycleOwner, Observer {
             setNumbersInList(it)
         })
     }

@@ -26,6 +26,8 @@
     <string name="emergency_number_cvb_gt">122</string>
     <string name="title_emergency_number_pnc_gt">Policia Nacional Civil</string>
     <string name="emergency_number_pnc_gt">110</string>
+    <string name="call_button">Llamar a emergencia</string>
+    <string name="img_logo_emergency">Imagen de institución de emergencia</string>
 
 </resources>
 

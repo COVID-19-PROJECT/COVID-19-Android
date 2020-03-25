@@ -1,4 +1,4 @@
-package com.gt.quedateencasa.views.main.models
+package com.gt.quedateencasa.repositories.models
 
 data class EmergencyNumberObject(
     val name:String,
