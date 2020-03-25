@@ -28,6 +28,7 @@
     <string name="emergency_number_pnc_gt">110</string>
     <string name="call_button">Llamar a emergencia</string>
     <string name="img_logo_emergency">Imagen de institución de emergencia</string>
+    <string name="call_permission_request">Debes aceptar el permiso para poder realizar la llamada</string>
 
 </resources>
 

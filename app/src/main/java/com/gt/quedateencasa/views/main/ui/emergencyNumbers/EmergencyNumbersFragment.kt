@@ -1,11 +1,15 @@
 package com.gt.quedateencasa.views.main.ui.emergencyNumbers
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -19,6 +23,10 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class EmergencyNumbersFragment : Fragment() {
+
+    companion object {
+        const val REQUEST_PERMISSION_CALL = 1
+    }
 
     private val emergencyNumbersViewModel by lazy {
         ViewModelProviders.of(this).get(EmergencyNumbersViewModel::class.java)
@@ -40,6 +48,25 @@ class EmergencyNumbersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupList()
         getNumbers()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (REQUEST_PERMISSION_CALL == requestCode) {
+            val results = grantResults.filter { it != PackageManager.PERMISSION_GRANTED }
+            if (grantResults.isEmpty() || results.isNotEmpty()) {
+                Toast.makeText(
+                    context,
+                    getString(R.string.call_permission_request),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
     }
 
     private fun setupList() {
@@ -67,8 +94,22 @@ class EmergencyNumbersFragment : Fragment() {
     }
 
     private fun callNumber(number: String) {
-        val intent = Intent(Intent.ACTION_CALL)
-        intent.data = Uri.parse("tel:$number")
-        startActivity(intent)
+        if (hasPermission()) {
+            val intent = Intent(Intent.ACTION_CALL)
+            intent.data = Uri.parse("tel:$number")
+            startActivity(intent)
+        } else {
+            requestPermissions(arrayOf(Manifest.permission.CALL_PHONE), REQUEST_PERMISSION_CALL)
+        }
+    }
+
+    private fun hasPermission(): Boolean {
+        context?.let {
+            return ContextCompat.checkSelfPermission(
+                it,
+                Manifest.permission.CALL_PHONE
+            ) == PackageManager.PERMISSION_GRANTED
+        }
+        return false
     }
 }
