@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
 
 
@@ -53,7 +54,8 @@
         <activity
             android:name=".views.main.MainActivity"
             android:label="@string/title_activity_main"
-            android:icon="@drawable/app_title" >
+            android:icon="@drawable/app_title"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
