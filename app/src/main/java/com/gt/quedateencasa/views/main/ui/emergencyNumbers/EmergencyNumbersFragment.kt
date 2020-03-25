@@ -22,6 +22,10 @@ class EmergencyNumbersFragment : Fragment() {
         ViewModelProviders.of(this).get(EmergencyNumbersViewModel::class.java)
     }
 
+    private val emergencyNumberAdapter by lazy {
+        EmergencyNumberAdapter()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,13 +39,16 @@ class EmergencyNumbersFragment : Fragment() {
         setupList()
         getNumbers()
     }
-    private fun setupList(){
+
+    private fun setupList() {
+        list_numbers.adapter = emergencyNumberAdapter
         list_numbers.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         list_numbers.addItemDecoration(
             DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         )
         list_numbers.itemAnimator = DefaultItemAnimator()
     }
+
     private fun getNumbers() {
         emergencyNumbersViewModel.getNumbers(context).observe(viewLifecycleOwner, Observer {
             setNumbersInList(it)
@@ -49,6 +56,6 @@ class EmergencyNumbersFragment : Fragment() {
     }
 
     private fun setNumbersInList(list: List<EmergencyNumberObject>) {
-
+        emergencyNumberAdapter.updateItems(list)
     }
 }
