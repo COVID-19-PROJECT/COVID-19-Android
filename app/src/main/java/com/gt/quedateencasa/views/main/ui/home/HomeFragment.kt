@@ -2,27 +2,18 @@ package com.gt.quedateencasa.views.main.ui.home
 
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.webkit.WebChromeClient
+import android.webkit.WebView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.listeners.ScrollListener
-import com.gt.quedateencasa.models.Notice.NoticeObject
-import com.gt.quedateencasa.models.Notice.NoticeAdapter
-import com.gt.quedateencasa.models.Notice.NoticeService
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.item_stat.view.*
-import java.util.*
 
 
 class HomeFragment : Fragment() {
@@ -31,9 +22,6 @@ class HomeFragment : Fragment() {
         ViewModelProviders.of(this).get(HomeViewModel::class.java)
     }
 
-    private val noticeAdapter by lazy {
-        NoticeAdapter()
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -46,7 +34,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRefreshListener()
         loadData()
-        getNotices()
     }
 
     //init section
@@ -54,7 +41,7 @@ class HomeFragment : Fragment() {
     {
         refresh_home.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
             override fun onRefresh() {
-                loadData()
+                getURL()
             }
         })
     }
@@ -62,7 +49,7 @@ class HomeFragment : Fragment() {
     fun loadData()
     {
         configureStats()
-        loadWebviews()
+        configureWebView()
         refresh_home.setRefreshing(false)
     }
 
@@ -85,32 +72,23 @@ class HomeFragment : Fragment() {
         confirmedDead.stat_qty.setText("20")
     }
     //Notices section
-    fun loadWebviews(){
-        configureRecyclerView()
-    }
-    fun configureRecyclerView(){
-        recycler_view_news.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        recycler_view_news.adapter = noticeAdapter
-        recycler_view_news.addItemDecoration(
-            DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-        )
-        recycler_view_news.itemAnimator = DefaultItemAnimator()
-        recycler_view_news.addOnScrollListener(object : ScrollListener() {
-            override fun onScrollUp() {}
-            override fun onScrollDown() {}
-            override fun onLoadMore() {
-                getNotices()
+    fun configureWebView(){
+        getURL()
+        webview.setWebChromeClient(object : WebChromeClient() {
+            override fun onProgressChanged(view: WebView, progress: Int) {
+                if (progress == 100) progress_bar.visibility = View.GONE;
             }
         })
     }
 
-    fun getNotices() {
-        homeViewModel.getNotices(context).observe(viewLifecycleOwner, Observer {
-            setNoticesInList(it)
+    private fun getURL() {
+        homeViewModel.getNotice(context).observe(viewLifecycleOwner, Observer { value ->
+            setURL(value)
         })
+        refresh_home.isRefreshing = false
     }
-    fun setNoticesInList(list: List<NoticeObject>) {
-        noticeAdapter.updateItems(list)
-        refresh_home.setRefreshing(false)
+
+    private fun setURL(URL:String?) {
+        webview.loadUrl(URL)
     }
 }

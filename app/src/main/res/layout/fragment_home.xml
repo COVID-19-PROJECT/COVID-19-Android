@@ -57,16 +57,29 @@
             android:id="@+id/refresh_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:padding="@dimen/xl_margin"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_stats"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_news"
-                android:padding="@dimen/xl_margin"
+            <LinearLayout
+                android:id="@+id/linear_webview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:indeterminate="true"></ProgressBar>
+                <WebView android:id="@+id/webview"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></WebView>
+            </LinearLayout>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

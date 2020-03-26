@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gt.quedateencasa.models.Notice.NoticeObject
 import com.gt.quedateencasa.models.Notice.NoticeService
 
 class HomeViewModel : ViewModel() {
@@ -13,10 +12,10 @@ class HomeViewModel : ViewModel() {
         NoticeService()
     }
 
-    fun getNotices(context: Context?): LiveData<ArrayList<NoticeObject>> {
-        val mutableLiveData = MutableLiveData<ArrayList<NoticeObject>>()
+    fun getNotice(context: Context?): LiveData<String> {
+        val mutableLiveData = MutableLiveData<String>()
         context?.let {
-            mutableLiveData.postValue(noticeService.findNotices())
+            mutableLiveData.postValue(noticeService.findNotice())
         }
         return mutableLiveData
     }
