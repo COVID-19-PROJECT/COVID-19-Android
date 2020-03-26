@@ -1,8 +1,8 @@
-package com.gt.quedateencasa.repositories
+package com.gt.quedateencasa.models.EmergencyNumbers
 
 import android.content.Context
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.repositories.models.EmergencyNumberObject
+import com.gt.quedateencasa.models.EmergencyNumbers.EmergencyNumberObject
 
 class EmergencyNumbersRepository {
     fun getNumbers(context: Context): List<EmergencyNumberObject> {

@@ -12,10 +12,19 @@
     <string name="accept_terms">Acepto los</string>
     <string name="create_and_support">Crea tu cuenta y apoya</string>
     <string name="title_activity_main">MainActivity</string>
+
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_emergency">Emergencia</string>
+    <string name="title_help">Ayuda</string>
     <string name="title_emergency_numbers">Números de emergencia</string>
+
+    <string name="stat_title">Stat title</string>
+    <string name="stat_qty">9999</string>
+
+    <string name="usage_form">Forma de uso</string>
+    <string name="text_tips">Consejos de prevención</string>
+
+    <string name="loading">Cargando</string>
 
     <string name="title_emergency_number_gt">Emergencia Coronavirus</string>
     <string name="emergency_number_gt">1510</string>

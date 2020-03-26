@@ -5,8 +5,8 @@ import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.gt.quedateencasa.repositories.EmergencyNumbersRepository
-import com.gt.quedateencasa.repositories.models.EmergencyNumberObject
+import com.gt.quedateencasa.models.EmergencyNumbers.EmergencyNumberObject
+import com.gt.quedateencasa.models.EmergencyNumbers.EmergencyNumbersRepository
 
 class EmergencyNumbersViewModel(application: Application) : AndroidViewModel(application) {
 

@@ -1,11 +1,10 @@
-package com.gt.quedateencasa.views.main.ui.emergencyNumbers
+package com.gt.quedateencasa.models.EmergencyNumbers
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.repositories.models.EmergencyNumberObject
 import kotlinx.android.synthetic.main.item_emergency_number.view.*
 
 class EmergencyNumberAdapter :
