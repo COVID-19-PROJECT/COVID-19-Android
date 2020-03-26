@@ -6,10 +6,14 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.gt.quedateencasa.R
 import com.gt.quedateencasa.listeners.ScrollListener
@@ -23,28 +27,26 @@ import java.util.*
 
 class HomeFragment : Fragment() {
 
-    private lateinit var noticeService:NoticeService
-    private lateinit var itemAdapter:NoticeAdapter
-    private lateinit var homeViewModel: HomeViewModel
+    private val homeViewModel by lazy {
+        ViewModelProviders.of(this).get(HomeViewModel::class.java)
+    }
+
+    private val noticeAdapter by lazy {
+        NoticeAdapter()
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        //val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            //textView.text = it
-        })
-        noticeService = NoticeService()
-        return root
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initRefreshListener()
         loadData()
+        getNotices()
     }
 
     //init section
@@ -84,13 +86,15 @@ class HomeFragment : Fragment() {
     }
     //Notices section
     fun loadWebviews(){
-        configureRecyclerView(noticeService.findNotices())
+        configureRecyclerView()
     }
-    fun configureRecyclerView(items:List<NoticeObject>){
-        itemAdapter = NoticeAdapter(context!!, R.layout.item_webview, items = items)
-        recycler_view_news.setLayoutManager(LinearLayoutManager(getContext()));
-        recycler_view_news.setAdapter(itemAdapter)
-
+    fun configureRecyclerView(){
+        recycler_view_news.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        recycler_view_news.adapter = noticeAdapter
+        recycler_view_news.addItemDecoration(
+            DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        )
+        recycler_view_news.itemAnimator = DefaultItemAnimator()
         recycler_view_news.addOnScrollListener(object : ScrollListener() {
             override fun onScrollUp() {}
             override fun onScrollDown() {}
@@ -100,15 +104,13 @@ class HomeFragment : Fragment() {
         })
     }
 
-    fun getNotices(){
-        val items: ArrayList<NoticeObject> = noticeService.findNotices()
-        val handler = Handler()
-        val r = Runnable {
-            items.clear()
-            items.addAll(items)
-            itemAdapter.notifyDataSetChanged()
-        }
-        handler.postDelayed(r, 1600)
+    fun getNotices() {
+        homeViewModel.getNotices(context).observe(viewLifecycleOwner, Observer {
+            setNoticesInList(it)
+        })
+    }
+    fun setNoticesInList(list: List<NoticeObject>) {
+        noticeAdapter.updateItems(list)
         refresh_home.setRefreshing(false)
     }
 }

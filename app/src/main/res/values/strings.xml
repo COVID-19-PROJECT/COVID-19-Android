@@ -12,9 +12,11 @@
     <string name="accept_terms">Acepto los</string>
     <string name="create_and_support">Crea tu cuenta y apoya</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Inicio</string>
+
+    <string name="title_home">Home</string>
     <string name="title_emergency">Emergencia</string>
     <string name="title_help">Ayuda</string>
+    <string name="title_emergency_numbers">Números de emergencia</string>
 
     <string name="stat_title">Stat title</string>
     <string name="stat_qty">9999</string>
@@ -23,5 +25,19 @@
     <string name="text_tips">Consejos de prevención</string>
 
     <string name="loading">Cargando</string>
+
+    <string name="title_emergency_number_gt">Emergencia Coronavirus</string>
+    <string name="emergency_number_gt">1510</string>
+    <string name="emergency_number_gt_2">1540</string>
+    <string name="title_emergency_number_cbm_gt">Bomberos Municipales</string>
+    <string name="emergency_number_cbm_gt">123</string>
+    <string name="title_emergency_number_cvb_gt">Bomberos Voluntarios</string>
+    <string name="emergency_number_cvb_gt">122</string>
+    <string name="title_emergency_number_pnc_gt">Policia Nacional Civil</string>
+    <string name="emergency_number_pnc_gt">110</string>
+    <string name="call_button">Llamar a emergencia</string>
+    <string name="img_logo_emergency">Imagen de institución de emergencia</string>
+    <string name="call_permission_request">Debes aceptar el permiso para poder realizar la llamada</string>
+
 </resources>
 

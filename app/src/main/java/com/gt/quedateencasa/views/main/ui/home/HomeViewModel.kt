@@ -1,13 +1,23 @@
 package com.gt.quedateencasa.views.main.ui.home
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gt.quedateencasa.models.Notice.NoticeObject
+import com.gt.quedateencasa.models.Notice.NoticeService
 
 class HomeViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val noticeService by lazy {
+        NoticeService()
     }
-    val text: LiveData<String> = _text
+
+    fun getNotices(context: Context?): LiveData<ArrayList<NoticeObject>> {
+        val mutableLiveData = MutableLiveData<ArrayList<NoticeObject>>()
+        context?.let {
+            mutableLiveData.postValue(noticeService.findNotices())
+        }
+        return mutableLiveData
+    }
 }

@@ -13,9 +13,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.views.main.ui.dashboard.DashboardFragment
+import com.gt.quedateencasa.views.main.ui.emergencyNumbers.EmergencyNumbersFragment
 import com.gt.quedateencasa.views.main.ui.home.HomeFragment
-import com.gt.quedateencasa.views.main.ui.notifications.NotificationsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

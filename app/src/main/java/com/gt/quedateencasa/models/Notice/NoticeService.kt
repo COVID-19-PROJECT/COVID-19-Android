@@ -8,6 +8,7 @@ class NoticeService : BaseService {
 
     public fun findNotices(): ArrayList<NoticeObject> {
         val items_: ArrayList<NoticeObject> = ArrayList()
+        items_.add(NoticeObject(UUID.randomUUID(),null,null,URL = "http://www.puedosalirdecasa.es/"))
         items_.add(NoticeObject(UUID.randomUUID(),null,null,URL = "http://quedateencasa.gt/"))
         return items_
     }

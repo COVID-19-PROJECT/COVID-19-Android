@@ -9,17 +9,17 @@
         android:id="@+id/navigation_home"
         android:name="com.gt.quedateencasa.views.main.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_emergency_numbers" />
 
     <fragment
         android:id="@+id/navigation_emergency"
-        android:name="com.gt.quedateencasa.views.main.ui.dashboard.DashboardFragment"
+        android:name="com.gt.quedateencasa.views.main.ui.emergencyNumbers.EmergencyNumbersFragment"
         android:label="@string/title_emergency"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_help"
-        android:name="com.gt.quedateencasa.views.main.ui.notifications.NotificationsFragment"
+        android:name="com.gt.quedateencasa.views.main.ui.emergencyNumbers.EmergencyNumbersFragment"
         android:label="@string/title_help"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
