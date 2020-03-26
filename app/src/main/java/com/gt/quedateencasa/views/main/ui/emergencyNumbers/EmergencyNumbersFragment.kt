@@ -18,7 +18,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.repositories.models.EmergencyNumberObject
+import com.gt.quedateencasa.models.EmergencyNumbers.EmergencyNumberAdapter
+import com.gt.quedateencasa.models.EmergencyNumbers.EmergencyNumberObject
 import kotlinx.android.synthetic.main.fragment_emergency_numbers.*
 
 

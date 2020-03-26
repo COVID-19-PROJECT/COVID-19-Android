@@ -57,7 +57,6 @@ dependencies {
     //facebook
     implementation 'com.facebook.android:facebook-login:6.2.0'
 
-
     // Mobile Client for initializing the SDK
     implementation ('com.amazonaws:aws-android-sdk-mobile-client:2.16.+@aar') { transitive = true }
     // Facebook
@@ -67,13 +66,17 @@ dependencies {
     //UI
     implementation ('com.amazonaws:aws-android-sdk-auth-ui:2.16.+@aar') { transitive = true }
 
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
-    implementation 'androidx.navigation:navigation-fragment:2.2.1'
-    implementation 'androidx.navigation:navigation-ui:2.2.1'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
+
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
