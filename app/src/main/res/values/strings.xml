@@ -39,5 +39,19 @@
     <string name="img_logo_emergency">Imagen de institución de emergencia</string>
     <string name="call_permission_request">Debes aceptar el permiso para poder realizar la llamada</string>
 
+    <string name="complete_profile">Completa tu perfil</string>
+    <string name="save">Guardar</string>
+    <string name="ill_do_later">Lo haré más tarde</string>
+    <string name="gender">Género</string>
+    <string-array name="genders">
+        <item name="male">Masculino</item>
+        <item name="female">Femenino</item>
+    </string-array>
+    <string name="born_date">Fecha de nacimiento</string>
+    <string name="positive_option">Aceptar</string>
+    <string name="cancel_option">Cancelar</string>
+    <string name="verify_user_data">Por favor completa los campos necesarios para completar tu perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
 

@@ -76,7 +76,7 @@ class HomeFragment : Fragment() {
         getURL()
         webview.setWebChromeClient(object : WebChromeClient() {
             override fun onProgressChanged(view: WebView, progress: Int) {
-                if (progress == 100) progress_bar.visibility = View.GONE;
+                if (progress == 100) progress_bar?.visibility = View.GONE;
             }
         })
     }
