@@ -39,5 +39,11 @@
     <string name="img_logo_emergency">Imagen de institución de emergencia</string>
     <string name="call_permission_request">Debes aceptar el permiso para poder realizar la llamada</string>
 
+    <string name="title_recomendations">Recomendaciones</string>
+    <string name="title_communications">Comunicaciones</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
 
