@@ -13,7 +13,7 @@ class HelpPagerAdapter (fragment: Fragment): FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
-        val fragment = RecommendationsFragment()
+        val fragment = WebViewsFragment()
         fragment.arguments = Bundle().apply {
             putInt(ARG_OBJECT, position + 1)
         }

@@ -31,12 +31,8 @@ class HelpFragment : Fragment() {
 
         TabLayoutMediator(tab_layout, pager) { tab, position ->
             when (position) {
-                0 -> {
-                    tab.text = getString(R.string.title_recomendations)
-                }
-                1 -> {
-                    tab.text = getString(R.string.title_communications)
-                }
+                0 -> tab.text = getString(R.string.title_recomendations)
+                1 -> tab.text = getString(R.string.title_communications)
             }
         }.attach()
     }
