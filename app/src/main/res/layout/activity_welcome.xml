@@ -23,7 +23,7 @@
             android:layout_height="@dimen/login_icon_height"
             android:contentDescription="@string/app_name"
             android:transitionName="logoTransition"
-            app:srcCompat="@drawable/es_logo_ow"
+            app:srcCompat="@drawable/logo_ow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
