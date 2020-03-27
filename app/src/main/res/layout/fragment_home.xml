@@ -73,7 +73,6 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:background="@android:color/transparent"
-                    android:theme="@style/AppTheme"
                     android:indeterminate="true"></ProgressBar>
                 <WebView android:id="@+id/webview"
                     android:layout_alignParentTop="true"
