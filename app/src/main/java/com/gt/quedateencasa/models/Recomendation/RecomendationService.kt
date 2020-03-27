@@ -1,8 +1,6 @@
 package com.gt.quedateencasa.models.Recomendation
 
-import com.gt.quedateencasa.models.Base.BaseService
-
-class RecomendationService : BaseService() {
+class RecomendationService  {
 
     fun findRecomendation(): String {
         return "https://www.google.com/"
