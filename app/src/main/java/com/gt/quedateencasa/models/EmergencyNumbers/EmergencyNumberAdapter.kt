@@ -27,7 +27,7 @@ class EmergencyNumberAdapter :
     }
 
     override fun onBindViewHolder(holder: ItemEmergencyNumberViewHolder, position: Int) {
-        holder.bind(listNumber[position], position)
+        holder.bind(listNumber[position])
     }
 
     fun updateItems(list: List<EmergencyNumberObject>) {
@@ -37,7 +37,7 @@ class EmergencyNumberAdapter :
     }
 
     inner class ItemEmergencyNumberViewHolder(private val v: View) : RecyclerView.ViewHolder(v) {
-        fun bind(item: EmergencyNumberObject, position: Int) {
+        fun bind(item: EmergencyNumberObject) {
             v.txt_emergency_number.text = item.number
             v.txt_emergency_title.text = item.name
             v.img_logo.setImageResource(item.resource)

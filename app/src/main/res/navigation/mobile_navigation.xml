@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_help"
-        android:name="com.gt.quedateencasa.views.main.ui.emergencyNumbers.EmergencyNumbersFragment"
-        android:label="@string/title_help"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.gt.quedateencasa.views.main.ui.help.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
 </navigation>
