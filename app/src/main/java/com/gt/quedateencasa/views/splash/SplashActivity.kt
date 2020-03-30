@@ -7,11 +7,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Pair
 import android.view.View
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import com.gt.quedateencasa.R
-import com.gt.quedateencasa.views.welcome.WelcomeActivity
+import com.gt.quedateencasa.views.main.MainActivity
+import com.gt.quedateencasa.views.onboarding.AppUtils
+import com.gt.quedateencasa.views.onboarding.OnBoardingActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -25,13 +25,21 @@ class SplashActivity : AppCompatActivity() {
     private fun initializeLayout(){
         val handler = Handler()
         val r = Runnable {
-            startActivity(WelcomeActivity::class.java)
+            startActivity()
         }
         handler.postDelayed(r, 1500)
     }
 
-    private fun startActivity(welcomeClass: Class<*>) {
-        val intent = Intent(applicationContext, welcomeClass)
+    private fun startActivity() {
+
+        val activityToStart: Class<*>
+        if (AppUtils(this).isFirstLaunch()) {
+            activityToStart = OnBoardingActivity::class.java
+        } else {
+            activityToStart = MainActivity::class.java
+        }
+
+        val intent = Intent(applicationContext, activityToStart)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val pairs: Array<Pair<View, String>?> = arrayOfNulls(1)
             pairs[0] = Pair.create<View, String>(

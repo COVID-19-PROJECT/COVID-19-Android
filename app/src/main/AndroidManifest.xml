@@ -43,25 +43,28 @@
             android:name=".views.splash.SplashActivity"
             android:noHistory="true"
             android:theme="@style/AppTheme.SplashScreen">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".views.welcome.WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.onboarding.OnBoardingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".views.main.MainActivity"
             android:label="@string/title_activity_main"
             android:icon="@drawable/app_title"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
     </application>
 
