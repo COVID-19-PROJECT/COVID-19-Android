@@ -39,6 +39,16 @@
     <string name="img_logo_emergency">Imagen de institución de emergencia</string>
     <string name="call_permission_request">Debes aceptar el permiso para poder realizar la llamada</string>
 
+    <string name="onboarding_continue">Continuar</string>
+    <string name="onboarding_end">Finalizar</string>
+    <string name="onboarding1_title">Con tu ubicación, podemos detectar posibles infectados y áreas de riesgo.</string>
+    <string name="onboarding1_subtitle">Así prevenimos la expansión del virus y podríamos ayudar a detectar posibles casos.</string>
+    <string name="onboarding2_title"></string>
+    <string name="onboarding2_subtitle">Podemos evitar que el virus se propague, solo con saber en dónde has estado, así identificaremos áreas vulnerables.</string>
+    <string name="onboarding3_title">¿Has estado fuera de Guate?</string>
+    <string name="onboarding3_subtitle">Ayúdanos con todos los detalles de tus ubicaciones, es esencial.</string>
+    <string name="onboarding4_title">Tu participación es voluntaria</string>
+    <string name="onboarding4_subtitle">Solamente se mostrarán las áreas de riesgo, nunca tu ubicación.</string>
     <string name="complete_profile">Completa tu perfil</string>
     <string name="save">Guardar</string>
     <string name="ill_do_later">Lo haré más tarde</string>
